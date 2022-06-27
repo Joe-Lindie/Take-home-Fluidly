@@ -40,5 +40,9 @@ test("Tests assertEquals() for length of array", () => {
   const array1 = ["a", "b"]
   const array2 = ["a", "b", "c"]
 
+  const array3 = ["a", "b"]
+  const array4 = ["a", "b", "c"]
+
   assertEquals(array1, array2)
+  assertEquals(array3, array4)
 })
