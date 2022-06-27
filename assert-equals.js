@@ -10,11 +10,28 @@ function assertEquals(expect, actual) {
     console.error("Fail: " + defaultMessage)
     return
   }
-
-  if (Array.isArray(actual) && Array.isArray(expect) === true) {
+  if (
+    Array.isArray(actual) &&
+    Array.isArray(expect) === true &&
+    expect.length !== actual.length
+  ) {
     const defaultMessage = `Expected array length ${expect.length} but found ${actual.length}`
     console.error("Fail: " + defaultMessage)
     return
+  }
+
+  if (
+    Array.isArray(actual) &&
+    Array.isArray(expect) === true &&
+    expect.length === actual.length
+  ) {
+    for (let i = 0; i < expect.length; i++) {
+      if (expect[i] !== actual[i]) {
+        const defaultMessage = `Expected ${expect[i]} but found ${actual[i]} instead`
+        console.error("Fail: " + defaultMessage)
+        return
+      }
+    }
   }
 
   if (actual !== expect) {

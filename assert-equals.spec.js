@@ -1,5 +1,6 @@
 const { TestScheduler } = require("jest")
 const assertEquals = require("./assert-equals")
+const assertEqualsArrays = require("./assert-equals")
 
 // describe('assertEquals', () => {
 //   describe('when expected and actual are the same string', () => {
@@ -29,20 +30,23 @@ test("Tests assertEquals() to see if type of data inputs are equal", () => {
 })
 
 test("Tests assertEquals() to check if arrays are the same!", () => {
-  const array1 = ["a", "b", "c"]
-  const array2 = ["a", "b", "c"]
+  const expect = ["a", "b", "c"]
+  const actual = ["a", "b", "c"]
 
-  assertEquals(array1.length, array2.length)
-  assertEquals(array1[1], array2[1])
+  assertEquals(expect.length, actual.length)
+  assertEquals(expect[1], actual[1])
 })
 
 test("Tests assertEquals() for length of array", () => {
-  const array1 = ["a", "b"]
-  const array2 = ["a", "b", "c"]
+  const expect = ["a", "b"]
+  const actual = ["a", "b", "c"]
 
-  const array3 = ["a", "b"]
-  const array4 = ["a", "b", "c"]
+  assertEquals(expect, actual)
+})
 
-  assertEquals(array1, array2)
-  assertEquals(array3, array4)
+test("Tests assertEquals() same elements", () => {
+  const expect = ["a", "b"]
+  const actual = ["a", "d"]
+
+  assertEquals(expect, actual)
 })
