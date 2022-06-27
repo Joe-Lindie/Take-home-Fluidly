@@ -33,7 +33,7 @@ test("Tests assertEquals() to check if arrays are the same!", () => {
   const array2 = ["a", "b", "c"]
 
   assertEquals(array1.length, array2.length)
-  assertEquals(array1[0], array2[0])
+  assertEquals(array1[1], array2[1])
 })
 
 test("Tests assertEquals() for length of array", () => {
